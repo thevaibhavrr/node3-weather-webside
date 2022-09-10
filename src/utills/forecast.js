@@ -4,9 +4,9 @@ const forecast = (address,callback)=>{
 
     request({url ,json: true},(error,{body})=>{
         if(error){
-            callback('tera net off hai phle chaluuu kr',undefined)
+            callback('unable to connect with internet',undefined)
         } else if(body.error){
-            callback('konsi jagh h reee , dusri jgh dekh',undefined)
+            callback('unable to find locaiton , try another serach',undefined)
         } else{
             callback(undefined,  body.current.weather_descriptions  +" . eesa mosm hai abhi " + body.current.temperature + " digree . or pani aane ke chance " + body.current.precip + " % hai 100% garnti ni hai ki aahi jaega")
         }
